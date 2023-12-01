@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: efa925db27857488a8318016da43d226
+guid: 939879d0de347f44ba5047ed4b54e345
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,62 +134,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Chopstick animation_0
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 148
-        width: 333
-        height: 326
-      alignment: 9
-      pivot: {x: 0.1, y: 0.125}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bff88a956534940b38ad8df821e79f2e
-      internalID: 69208652
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chopstick animation_1
-      rect:
-        serializedVersion: 2
-        x: 462
-        y: 194
-        width: 337
-        height: 312
-      alignment: 9
-      pivot: {x: 0.025, y: 0.025}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77ae145ad44724a0f8b948ee37d348e5
-      internalID: -1184739458
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Chopstick animation_0: 69208652
-      Chopstick animation_1: -1184739458
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
