@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/KieronKitchenScene.unity
-    guid: f3f546ca1c2fc40418ad672c2eabe18f
+    path: Assets/Scenes/KitchenScene1.unity
+    guid: b5a8ed148ae28184e86ffaecc91e5632
+  - enabled: 1
+    path: Assets/Scenes/KieronGameOverScene.unity
+    guid: 188838d296d4d604bb81275c9f1390cd
   m_configObjects: {}

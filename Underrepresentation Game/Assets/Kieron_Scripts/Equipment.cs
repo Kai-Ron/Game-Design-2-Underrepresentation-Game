@@ -4,29 +4,51 @@ using UnityEngine;
 
 public class Equipment : MonoBehaviour
 {
-    public PlayerControls player;
+    //private Rigidbody2D rb;
+    private float mouseX, mouseY;
+    public bool pickUp = false;
+    Vector3 mousePosition;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        //rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseX = mousePosition.x;
+        mouseY = mousePosition.y;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Collider2D collider = Physics2D.OverlapPoint(mousePosition);
+            if (collider)
+            {
+                if (gameObject == collider.transform.gameObject && !pickUp)
+                {
+                    pickUp = true;
+                }
+            }
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Collider2D collider = Physics2D.OverlapPoint(mousePosition);
+            if (collider)
+            {
+                if (gameObject == collider.transform.gameObject && pickUp)
+                {
+                    pickUp = false;
+                }
+            }
+        }
     }
 
-    private void OnCollisionStay2D(Collision2D other)
+    void FixedUpdate()
     {
-        if (gameObject.tag == "Food")
+        if(pickUp)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                player.CheckAction();
-                Debug.Log("Working");
-            }
+            transform.position = new Vector3 (mouseX, mouseY, 0);
         }
     }
 }

@@ -6,12 +6,10 @@ using UnityEngine.SceneManagement;
 public class Ingredient : MonoBehaviour
 {
     //private Rigidbody2D rb;
-    public GameObject /*tool,*/ product, productFin, area;
-    public string name;
-    public int amount;
-    public PlayerControls player;
-    public bool safe = false;
-    //public bool ready = false;
+    public GameObject startArea, prepArea;
+    private float mouseX, mouseY;
+    public bool pickUp = false, safe = true;
+    Vector3 mousePosition;
 
     // Start is called before the first frame update
     void Start()
@@ -22,15 +20,49 @@ public class Ingredient : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!player.equipped && !safe)
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseX = mousePosition.x;
+        mouseY = mousePosition.y;
+
+        if (Input.GetMouseButtonDown(0))
         {
-            //SceneManager.LoadScene("KieronGameOverScreen");
+            Collider2D collider = Physics2D.OverlapPoint(mousePosition);
+            if (collider)
+            {
+                if (gameObject == collider.transform.gameObject && !pickUp)
+                {
+                    pickUp = true;
+                }
+            }
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Collider2D collider = Physics2D.OverlapPoint(mousePosition);
+            if (collider)
+            {
+                if (gameObject == collider.transform.gameObject && pickUp)
+                {
+                    pickUp = false;
+                }
+            }
+        }
+        if(!safe && !pickUp)
+        {
+            SceneManager.LoadScene("KieronGameOverScene");
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if(pickUp)
+        {
+            transform.position = new Vector3 (mouseX, mouseY, 0);
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.gameObject == area)
+        if (other.transform.gameObject == startArea || other.transform.gameObject == prepArea)
         {
             safe = true;
         }
@@ -38,7 +70,7 @@ public class Ingredient : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.transform.gameObject == area)
+        if (other.transform.gameObject == startArea || other.transform.gameObject == prepArea)
         {
             safe = false;
         }
