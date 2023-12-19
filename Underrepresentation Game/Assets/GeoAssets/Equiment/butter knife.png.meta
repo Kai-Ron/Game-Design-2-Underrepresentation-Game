@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 11adefa21cf0e4503a99c1949acd3582
+guid: fedef718edc1d4f9c8ef87e897669bb0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,43 +110,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: knife_0
+      name: butter knife_0
       rect:
         serializedVersion: 2
-        x: 148
-        y: 236
-        width: 115
-        height: 291
+        x: 134
+        y: 15
+        width: 72
+        height: 487
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d49f641cd1b0e445789420dba310b391
-      internalID: -439368259
+      spriteID: 69af2c41979d34089961b2ee384119d9
+      internalID: 1800539833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: knife_1
+      name: butter knife_1
       rect:
         serializedVersion: 2
-        x: 495
-        y: 229
-        width: 57
-        height: 292
+        x: 365
+        y: 13
+        width: 72
+        height: 487
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4c077c2d3d9e41e59b9f1b79ea9cd86
-      internalID: 1930313726
+      spriteID: 2b0226f51f5f947c38b3e11669c73cee
+      internalID: -1851030502
       vertices: []
       indices: 
       edges: []
@@ -162,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      knife_0: -439368259
-      knife_1: 1930313726
+      butter knife_0: 1800539833
+      butter knife_1: -1851030502
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
