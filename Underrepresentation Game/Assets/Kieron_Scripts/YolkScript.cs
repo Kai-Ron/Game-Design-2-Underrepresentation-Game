@@ -21,6 +21,11 @@ public class YolkScript : MonoBehaviour
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseX = mousePosition.x;
         mouseY = mousePosition.y;
+
+        if (gameObject.activeSelf == false)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void FixedUpdate()
@@ -55,7 +60,10 @@ public class YolkScript : MonoBehaviour
     {
         if(area == collider.transform.gameObject)
         {
-            SceneManager.LoadScene("KieronGameOverScene");
+            if(gameObject.activeSelf)
+            {
+                SceneManager.LoadScene("KieronGameOverScene");
+            }
         }
     }
 }
