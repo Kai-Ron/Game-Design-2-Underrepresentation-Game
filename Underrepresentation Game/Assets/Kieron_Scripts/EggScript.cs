@@ -35,38 +35,45 @@ public class EggScript : MonoBehaviour
                             instance = Instantiate(yolk, transform.position, Quaternion.Euler(0,0,0));
                             instance.GetComponent<YolkScript>().area = egg.prepArea;
                             egg.pickUp = false;
-                            Destroy(gameObject);
+                            gameObject.SetActive(false);
                         }
                         else if (collider.transform.gameObject.tag == "Product")
                         {
                             instance = Instantiate(yolk, transform.position, Quaternion.Euler(0,0,0));
                             instance.GetComponent<YolkScript>().area = egg.prepArea;
                             egg.pickUp = false;
-                            Destroy(gameObject);
+                            gameObject.SetActive(false);
                         }
                         else
                         {
+                            Debug.Log(collider.transform.gameObject.name);
                             SceneManager.LoadScene("KieronGameOverScene");
                         }
                     }
                     else
                     {
+                        Debug.Log(1);
                         SceneManager.LoadScene("KieronGameOverScene");
                     }
                 }
                 else
                 {
+                    Debug.Log(2);
                     SceneManager.LoadScene("KieronGameOverScene");
                 }
             }
         }
+        
+        egg.Controls();
     }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.transform.gameObject.tag == "Danger")
         {
+            Debug.Log(3);
             SceneManager.LoadScene("KieronGameOverScene");
         }
     }
+
 }
