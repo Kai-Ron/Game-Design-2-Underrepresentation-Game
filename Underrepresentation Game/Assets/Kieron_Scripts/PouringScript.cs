@@ -32,7 +32,7 @@ public class PouringScript : MonoBehaviour
             safe = true;
             Debug.Log(safe);
         }*/
-        Debug.Log(safe);
+        //Debug.Log(safe);
         if (collider.transform.gameObject == area)
         {
             safe = true;

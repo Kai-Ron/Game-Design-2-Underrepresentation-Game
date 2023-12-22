@@ -5,7 +5,6 @@ using UnityEngine;
 public class BowlScript : MonoBehaviour
 {
     public GameObject mixture;
-    public GameObject bowl;
     public GameObject area;
     public GameObject eggs;
     public GameObject knives;
@@ -23,7 +22,7 @@ public class BowlScript : MonoBehaviour
     {
         products = new GameObject[total];
         rb = new Rigidbody2D[total];
-        equipment = bowl.GetComponent<Equipment>();
+        equipment = gameObject.GetComponent<Equipment>();
     }
 
     // Update is called once per frame
@@ -56,10 +55,12 @@ public class BowlScript : MonoBehaviour
 
         if (mixture.activeSelf)
         {
+            gameObject.GetComponent<Equipment>().enabled = true;
+
             if (Input.GetMouseButtonDown(0) && safe)
             {
                 eggs.SetActive(true);
-                Destroy(bowl);
+                Destroy(gameObject);
             }
         }
     }
@@ -74,7 +75,7 @@ public class BowlScript : MonoBehaviour
             amount++;
         }
 
-        if (collider == area.GetComponent<Collider2D>())
+        if (collider.transform.gameObject == area)
         {
             safe = true;
         }

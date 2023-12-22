@@ -45,4 +45,28 @@ public class CameraController : MonoBehaviour
         transform.position = new Vector3(transform.position.x + distance, transform.position.y, transform.position.z);
         opened = !opened;
     }
+
+    public void Close(float distance)
+    {
+        if(!opened && distance < 0)
+        {
+            LeftArrow.SetActive(false);
+        }
+        else if(!opened && distance > 0)
+        {
+            RightArrow.SetActive(false);
+        }
+        else if(distance < 0)
+        {
+            RightArrow.SetActive(true);
+        }
+        else if(distance > 0)
+        {
+            LeftArrow.SetActive(true);
+        }
+        
+        transform.position = new Vector3(transform.position.x + distance, transform.position.y, transform.position.z);
+        opened = !opened;
+        playing = true;
+    }
 }

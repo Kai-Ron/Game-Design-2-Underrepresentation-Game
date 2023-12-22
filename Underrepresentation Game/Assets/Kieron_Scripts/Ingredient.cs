@@ -18,7 +18,7 @@ public class Ingredient : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Controls()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseX = mousePosition.x;
@@ -48,8 +48,13 @@ public class Ingredient : MonoBehaviour
         }
         if(!safe && !pickUp)
         {
-            SceneManager.LoadScene("KieronGameOverScene");
+            Debug.Log(4);
+            if(gameObject.activeSelf)
+            {
+                SceneManager.LoadScene("KieronGameOverScene");
+            }
         }
+
     }
 
     void FixedUpdate()
@@ -72,7 +77,10 @@ public class Ingredient : MonoBehaviour
     {
         if (other.transform.gameObject == startArea || other.transform.gameObject == prepArea)
         {
-            safe = false;
+            if(gameObject.activeSelf)
+            {
+                safe = false;
+            }
         }
     }
 }
