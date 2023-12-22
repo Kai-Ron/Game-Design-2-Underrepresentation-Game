@@ -30,16 +30,23 @@ public class EggScript : MonoBehaviour
                     Collider2D collider = Physics2D.OverlapPoint(transform.position);
                     if(collider)
                     {
-                        if(egg.prepArea != collider.transform.gameObject)
-                        {
-                            SceneManager.LoadScene("KieronGameOverScene");
-                        }
-                        else
+                        if(egg.prepArea == collider.transform.gameObject)
                         {
                             instance = Instantiate(yolk, transform.position, Quaternion.Euler(0,0,0));
                             instance.GetComponent<YolkScript>().area = egg.prepArea;
                             egg.pickUp = false;
                             Destroy(gameObject);
+                        }
+                        else if (collider.transform.gameObject.tag == "Product")
+                        {
+                            instance = Instantiate(yolk, transform.position, Quaternion.Euler(0,0,0));
+                            instance.GetComponent<YolkScript>().area = egg.prepArea;
+                            egg.pickUp = false;
+                            Destroy(gameObject);
+                        }
+                        else
+                        {
+                            SceneManager.LoadScene("KieronGameOverScene");
                         }
                     }
                     else
@@ -55,8 +62,11 @@ public class EggScript : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        SceneManager.LoadScene("KieronGameOverScene");
+        if (collider.transform.gameObject.tag == "Danger")
+        {
+            SceneManager.LoadScene("KieronGameOverScene");
+        }
     }
 }

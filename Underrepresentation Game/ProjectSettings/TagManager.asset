@@ -10,6 +10,8 @@ TagManager:
   - Handle
   - Safe
   - Product
+  - Danger
+  - Border
   layers:
   - Default
   - TransparentFX

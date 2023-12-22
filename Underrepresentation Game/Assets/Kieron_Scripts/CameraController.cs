@@ -5,8 +5,23 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public bool opened = false;
+    public bool playing = false;
     public GameObject LeftArrow;
     public GameObject RightArrow;
+
+    void Update()
+    {
+        if (playing)
+        {
+            LeftArrow.SetActive(false);
+            RightArrow.SetActive(false);
+        }
+        else
+        {
+            LeftArrow.SetActive(true);
+            RightArrow.SetActive(true);
+        }
+    }
     
     public void Open(float distance)
     {
