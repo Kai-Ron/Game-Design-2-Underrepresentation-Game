@@ -48,7 +48,7 @@ public class Equipment : MonoBehaviour
     {
         if(pickUp)
         {
-            transform.position = new Vector3 (mouseX, mouseY, 0);
+            transform.position = new Vector3 (mouseX, mouseY, -1);
         }
     }
 }

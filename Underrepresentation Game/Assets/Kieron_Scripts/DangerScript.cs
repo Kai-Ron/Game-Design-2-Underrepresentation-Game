@@ -36,6 +36,7 @@ public class DangerScript : MonoBehaviour
         {
             direction = !direction;
             rb.velocity = new Vector3 (0, 0, 0);
+            Debug.Log(speed);
         }
     }
 }
