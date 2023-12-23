@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
     public int scene;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +22,11 @@ public class SceneChanger : MonoBehaviour
     public void ChangeScene()
     {
         SceneManager.LoadScene(scene);
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
     }
 }

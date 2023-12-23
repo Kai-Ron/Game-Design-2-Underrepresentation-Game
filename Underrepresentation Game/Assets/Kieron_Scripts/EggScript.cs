@@ -74,6 +74,12 @@ public class EggScript : MonoBehaviour
             Debug.Log(3);
             SceneManager.LoadScene("KieronGameOverScene");
         }
+
+        if (collider.transform.gameObject.tag == "Border")
+        {
+            Debug.Log(5);
+            SceneManager.LoadScene("KieronGameOverScene");
+        }
     }
 
 }
