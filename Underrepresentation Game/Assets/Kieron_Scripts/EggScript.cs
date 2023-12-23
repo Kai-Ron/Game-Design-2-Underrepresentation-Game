@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class EggScript : MonoBehaviour
 {
@@ -9,12 +10,15 @@ public class EggScript : MonoBehaviour
     private Ingredient egg;
     public GameObject yolk;
     private GameObject instance;
+    public TMP_Text text;
+    public int lives = 3;
     
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         egg = gameObject.GetComponent<Ingredient>();
+        text.text = lives.ToString() + " Lives";
     }
 
     // Update is called once per frame
@@ -47,19 +51,19 @@ public class EggScript : MonoBehaviour
                         else
                         {
                             Debug.Log(collider.transform.gameObject.name);
-                            SceneManager.LoadScene("KieronGameOverScene");
+                            Damage();
                         }
                     }
                     else
                     {
                         Debug.Log(1);
-                        SceneManager.LoadScene("KieronGameOverScene");
+                        Damage();
                     }
                 }
                 else
                 {
                     Debug.Log(2);
-                    SceneManager.LoadScene("KieronGameOverScene");
+                    Damage();
                 }
             }
         }
@@ -72,12 +76,23 @@ public class EggScript : MonoBehaviour
         if (collider.transform.gameObject.tag == "Danger")
         {
             Debug.Log(3);
-            SceneManager.LoadScene("KieronGameOverScene");
+            Damage();
         }
 
         if (collider.transform.gameObject.tag == "Border")
         {
             Debug.Log(5);
+            Damage();
+        }
+    }
+
+    public void Damage()
+    {
+        lives--;
+        text.text = lives.ToString() + " Lives";
+        if(lives == 0)
+        {
+            Debug.Log("OOPS! Sorry:P");
             SceneManager.LoadScene("KieronGameOverScene");
         }
     }
