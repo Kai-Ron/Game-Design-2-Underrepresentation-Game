@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour
 {
     public bool opened = false;
     public bool playing = false;
+    private bool finished = false;
     public GameObject LeftArrow;
     public GameObject RightArrow;
 
@@ -15,11 +16,15 @@ public class CameraController : MonoBehaviour
         {
             LeftArrow.SetActive(false);
             RightArrow.SetActive(false);
+
+            finished = true;
         }
-        else
+        else if (!playing && finished)
         {
-            LeftArrow.SetActive(true);
             RightArrow.SetActive(true);
+            LeftArrow.SetActive(true);
+
+            finished = false;
         }
     }
     
