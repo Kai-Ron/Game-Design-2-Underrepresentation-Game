@@ -34,8 +34,9 @@ public class HotspotScript : MonoBehaviour
             }
             else
             {
-                Debug.Log("OOPS! Sorry:P");
-                SceneManager.LoadScene("KieronGameOverScene");
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                board.Damage();
+                gameObject.GetComponent<SpriteRenderer>().enabled = true;
             }
         }
     }
