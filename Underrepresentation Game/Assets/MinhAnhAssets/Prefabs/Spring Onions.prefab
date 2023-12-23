@@ -147,6 +147,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spring Onion
       objectReference: {fileID: 0}
+    - target: {fileID: 7648131062088169719, guid: 063fbae6b2dce934db793849f1e25b7e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

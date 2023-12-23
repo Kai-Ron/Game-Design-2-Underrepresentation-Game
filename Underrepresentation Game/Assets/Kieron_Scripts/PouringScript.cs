@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PouringScript : MonoBehaviour
 {
-    public GameObject area;
+    //public GameObject area;
     public GameObject product;
-    public GameObject container;
+    //public GameObject container;
+    public CameraController camController;
     private bool safe;
 
     // Start is called before the first frame update
@@ -20,24 +21,25 @@ public class PouringScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && safe)
         {
+            camController.playing = false;
             product.SetActive(true);
-            Destroy(container);
+            Destroy(gameObject);
         }
     }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        /*if (collider.transform.gameObject.tag == "Safe")
-        {
-            safe = true;
-            Debug.Log(safe);
-        }*/
-        //Debug.Log(safe);
-        if (collider.transform.gameObject == area)
+        if (collider.transform.gameObject.tag == "Safe")
         {
             safe = true;
             Debug.Log(safe);
         }
+        //Debug.Log(safe);
+        /*if (collider.transform.gameObject == area)
+        {
+            safe = true;
+            Debug.Log(safe);
+        }*/
     }
 
     void OnTriggerExit2D(Collider2D collider)

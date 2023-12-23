@@ -8,6 +8,7 @@ public class BowlScript : MonoBehaviour
     public GameObject area;
     public GameObject eggs;
     public GameObject knives;
+    public CameraController camController;
     private Equipment equipment;
     public int total;
     private int amount = 0;
@@ -48,7 +49,7 @@ public class BowlScript : MonoBehaviour
                 }
                 //equipment.pickUp = true;
                 mixture.SetActive(true);
-                knives.SetActive(false);
+                //knives.SetActive(false);
                 amount = 0;
             }
         }
@@ -59,6 +60,7 @@ public class BowlScript : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && safe)
             {
+                camController.playing = false;
                 eggs.SetActive(true);
                 Destroy(gameObject);
             }
