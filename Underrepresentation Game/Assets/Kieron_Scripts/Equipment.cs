@@ -28,7 +28,9 @@ public class Equipment : MonoBehaviour
                 if (gameObject == collider.transform.gameObject && !pickUp)
                 {
                     pickUp = true;
+                    Debug.Log("IDK");
                 }
+                Debug.Log("Why?");
             }
         }
         if (Input.GetMouseButtonDown(1))
